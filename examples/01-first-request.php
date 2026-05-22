@@ -17,7 +17,7 @@ $apiKey = getenv('BOTIX_API_KEY') ?: 'btx_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 $client = new \BotixPro\Sdk\Client($apiKey);
 
 try {
-    $me = $client->meta()->publicV1MeGet();
+    $me = $client->system()->meGet();
     $data = $me->getData();
     echo "OK\n";
     echo "  project_id = {$data->getProjectId()}\n";

@@ -30,7 +30,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $client = new \BotixPro\Sdk\Client('btx_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 
-$me = $client->meta()->publicV1MeGet();
+$me = $client->system()->meGet();
 echo "project_id = {$me->getData()->getProjectId()}\n";
 echo "plan = {$me->getData()->getPlanKey()}\n";
 ```
@@ -41,13 +41,13 @@ echo "plan = {$me->getData()->getPlanKey()}\n";
 
 ```php
 <?php
-$body = new \BotixPro\Sdk\Model\PublicV1MessagesPostRequest([
+$body = new \BotixPro\Sdk\Model\MessagesSendRequest([
     'contact_id' => 12345,
     'content'    => 'Привет от BOTIX SDK',
     'channel'    => 'telegram', // опционально
 ]);
 
-$response = $client->messages()->publicV1MessagesPost($body);
+$response = $client->messages()->messagesSend($body);
 echo "message_id = {$response->getData()->getMessageId()}\n";
 ```
 
@@ -95,7 +95,7 @@ API возвращает `{success: false, error: {code, message, details}}`. SD
 
 ```php
 try {
-    $client->messages()->publicV1MessagesPost($body);
+    $client->messages()->messagesSend($body);
 } catch (\BotixPro\Sdk\ApiException $e) {
     $payload = json_decode($e->getResponseBody(), true);
     error_log("BOTIX error {$payload['error']['code']}: {$payload['error']['message']}");

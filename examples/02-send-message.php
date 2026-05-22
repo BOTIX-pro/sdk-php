@@ -22,14 +22,14 @@ if ($contactId === 0) {
 
 $client = new \BotixPro\Sdk\Client($apiKey);
 
-$body = new \BotixPro\Sdk\Model\PublicV1MessagesPostRequest([
+$body = new \BotixPro\Sdk\Model\MessagesSendRequest([
     'contact_id' => $contactId,
     'content'    => 'Привет от BOTIX SDK!',
     // 'channel'  => 'telegram', // опционально
 ]);
 
 try {
-    $response = $client->messages()->publicV1MessagesPost($body);
+    $response = $client->messages()->messagesSend($body);
     $data = $response->getData();
     echo "Отправлено\n";
     echo "  message_id      = {$data->getMessageId()}\n";

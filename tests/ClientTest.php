@@ -8,8 +8,8 @@ use BotixPro\Sdk\Api\ChannelsApi;
 use BotixPro\Sdk\Api\ChatsApi;
 use BotixPro\Sdk\Api\ContactsApi;
 use BotixPro\Sdk\Api\MessagesApi;
-use BotixPro\Sdk\Api\MetaApi;
 use BotixPro\Sdk\Api\ScenariosApi;
+use BotixPro\Sdk\Api\SystemApi;
 use BotixPro\Sdk\Api\WebhooksApi;
 use BotixPro\Sdk\Client;
 use GuzzleHttp\Client as GuzzleClient;
@@ -54,7 +54,7 @@ final class ClientTest extends TestCase
     public function testResourceAccessorsReturnExpectedTypes(): void
     {
         $client = new Client('btx_live_x');
-        self::assertInstanceOf(MetaApi::class, $client->meta());
+        self::assertInstanceOf(SystemApi::class, $client->system());
         self::assertInstanceOf(ContactsApi::class, $client->contacts());
         self::assertInstanceOf(MessagesApi::class, $client->messages());
         self::assertInstanceOf(ScenariosApi::class, $client->scenarios());
@@ -66,7 +66,7 @@ final class ClientTest extends TestCase
     public function testResourceAccessorsAreCached(): void
     {
         $client = new Client('btx_live_x');
-        self::assertSame($client->meta(), $client->meta());
+        self::assertSame($client->system(), $client->system());
         self::assertSame($client->messages(), $client->messages());
     }
 
@@ -79,7 +79,7 @@ final class ClientTest extends TestCase
 
         $guzzle = new GuzzleClient(['handler' => $stack]);
         $client = new Client('btx_live_xyz', ['http_client' => $guzzle]);
-        $client->meta()->publicV1MeGet();
+        $client->system()->meGet();
 
         self::assertCount(1, $history);
         self::assertSame('Bearer btx_live_xyz', $history[0]['request']->getHeaderLine('Authorization'));

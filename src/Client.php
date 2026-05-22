@@ -15,8 +15,8 @@ use BotixPro\Sdk\Api\ChannelsApi;
 use BotixPro\Sdk\Api\ChatsApi;
 use BotixPro\Sdk\Api\ContactsApi;
 use BotixPro\Sdk\Api\MessagesApi;
-use BotixPro\Sdk\Api\MetaApi;
 use BotixPro\Sdk\Api\ScenariosApi;
+use BotixPro\Sdk\Api\SystemApi;
 use BotixPro\Sdk\Api\WebhooksApi;
 use BotixPro\Sdk\Middleware\IdempotencyMiddleware;
 use GuzzleHttp\Client as GuzzleClient;
@@ -26,7 +26,7 @@ use GuzzleHttp\HandlerStack;
  * Точка входа в SDK.
  *
  *   $client = new \BotixPro\Sdk\Client('btx_live_...');
- *   $me = $client->meta()->publicV1MeGet();
+ *   $me = $client->system()->meGet();
  *
  * Опции (массив $options):
  *   - host                 (string) переопределить базовый URL (по умолчанию https://api.botix.pro)
@@ -44,7 +44,7 @@ final class Client
     private Configuration $config;
     private \GuzzleHttp\ClientInterface $httpClient;
 
-    private ?MetaApi $meta = null;
+    private ?SystemApi $system = null;
     private ?ContactsApi $contacts = null;
     private ?MessagesApi $messages = null;
     private ?ScenariosApi $scenarios = null;
@@ -90,9 +90,9 @@ final class Client
         return $this->httpClient;
     }
 
-    public function meta(): MetaApi
+    public function system(): SystemApi
     {
-        return $this->meta ??= new MetaApi($this->httpClient, $this->config);
+        return $this->system ??= new SystemApi($this->httpClient, $this->config);
     }
 
     public function contacts(): ContactsApi
