@@ -94,7 +94,7 @@ $apiInstance = new BotixPro\Sdk\Api\ScenariosApi(
 );
 $id = 56; // int
 $scenarios_run_request = new \BotixPro\Sdk\Model\ScenariosRunRequest(); // \BotixPro\Sdk\Model\ScenariosRunRequest
-$idempotency_key = 'idempotency_key_example'; // string
+$idempotency_key = 'idempotency_key_example'; // string | Уникальный токен запроса для защиты от дублей при сетевых сбоях. Рекомендация — UUID v4 на каждую логическую операцию. **TTL ключа — 24 часа.** После истечения тот же `Idempotency-Key` создаст новую операцию, кешированный результат не возвращается. Повтор в окне 24 часов вернёт сохранённый ответ + заголовок `Idempotent-Replayed: 1`.
 
 try {
     $result = $apiInstance->scenariosRun($id, $scenarios_run_request, $idempotency_key);
@@ -110,7 +110,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**|  | |
 | **scenarios_run_request** | [**\BotixPro\Sdk\Model\ScenariosRunRequest**](../Model/ScenariosRunRequest.md)|  | |
-| **idempotency_key** | **string**|  | [optional] |
+| **idempotency_key** | **string**| Уникальный токен запроса для защиты от дублей при сетевых сбоях. Рекомендация — UUID v4 на каждую логическую операцию. **TTL ключа — 24 часа.** После истечения тот же &#x60;Idempotency-Key&#x60; создаст новую операцию, кешированный результат не возвращается. Повтор в окне 24 часов вернёт сохранённый ответ + заголовок &#x60;Idempotent-Replayed: 1&#x60;. | [optional] |
 
 ### Return type
 

@@ -4,6 +4,18 @@
 Формат — [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/),
 версионирование — [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-05-22
+
+### Added
+- 3 новых bulk-endpoint: `contactsBulkCreate`, `contactsBulkUpdate`, `messagesBulkSend` (до 100 операций за запрос, частичный успех).
+- Параметр `cursor` в 12 list-методах (cursor-based пагинация параллельно с существующим `page`/`per_page`, обратно-совместимо).
+- Поле `meta.next_cursor` и `meta.has_more` в response list-методов (cursor-режим).
+- Описание заголовков `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Reset` и `Retry-After` в спецификации.
+
+### Changed
+- Регенерация автогенерируемой части (`lib/`) на openapi.yaml v1.1.0.
+- `Client::VERSION` и User-Agent → `1.1.0`.
+
 ## [1.0.0] — 2026-05-22
 
 ### Added

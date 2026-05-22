@@ -38,8 +38,8 @@ use GuzzleHttp\HandlerStack;
  */
 final class Client
 {
-    public const VERSION = '1.0.0';
-    public const DEFAULT_USER_AGENT = 'botix-pro-sdk-php/1.0.0';
+    public const VERSION = '1.1.0';
+    public const DEFAULT_USER_AGENT = 'botix-pro-sdk-php/1.1.0';
 
     private Configuration $config;
     private \GuzzleHttp\ClientInterface $httpClient;

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php-cs-fixer.dist.php
 .travis.yml
 README.md
@@ -11,6 +10,9 @@ docs/Api/MessagesApi.md
 docs/Api/ScenariosApi.md
 docs/Api/SystemApi.md
 docs/Api/WebhooksApi.md
+docs/Model/BulkResult.md
+docs/Model/BulkResultData.md
+docs/Model/BulkResultDataResultsInner.md
 docs/Model/Channel.md
 docs/Model/ChannelsList200Response.md
 docs/Model/ChannelsList200ResponseMeta.md
@@ -21,6 +23,9 @@ docs/Model/ContactWritable.md
 docs/Model/ContactsAddTag200Response.md
 docs/Model/ContactsAddTag200ResponseData.md
 docs/Model/ContactsAddTagRequest.md
+docs/Model/ContactsBulkCreateRequest.md
+docs/Model/ContactsBulkUpdateRequest.md
+docs/Model/ContactsBulkUpdateRequestUpdatesInner.md
 docs/Model/ContactsList200Response.md
 docs/Model/ContactsRemoveTag200Response.md
 docs/Model/Error.md
@@ -30,6 +35,12 @@ docs/Model/MeResponseData.md
 docs/Model/MeResponseDataLimits.md
 docs/Model/MeResponseDataRateLimit.md
 docs/Model/Message.md
+docs/Model/MessagesBulkSend200Response.md
+docs/Model/MessagesBulkSend200ResponseData.md
+docs/Model/MessagesBulkSend200ResponseDataResultsInner.md
+docs/Model/MessagesBulkSendRequest.md
+docs/Model/MessagesBulkSendRequestMessagesInner.md
+docs/Model/MessagesBulkSendRequestMessagesInnerAttachmentsInner.md
 docs/Model/MessagesList200Response.md
 docs/Model/MessagesSend200Response.md
 docs/Model/MessagesSend200ResponseData.md
@@ -64,6 +75,9 @@ lib/ApiException.php
 lib/Configuration.php
 lib/FormDataProcessor.php
 lib/HeaderSelector.php
+lib/Model/BulkResult.php
+lib/Model/BulkResultData.php
+lib/Model/BulkResultDataResultsInner.php
 lib/Model/Channel.php
 lib/Model/ChannelsList200Response.php
 lib/Model/ChannelsList200ResponseMeta.php
@@ -74,6 +88,9 @@ lib/Model/ContactWritable.php
 lib/Model/ContactsAddTag200Response.php
 lib/Model/ContactsAddTag200ResponseData.php
 lib/Model/ContactsAddTagRequest.php
+lib/Model/ContactsBulkCreateRequest.php
+lib/Model/ContactsBulkUpdateRequest.php
+lib/Model/ContactsBulkUpdateRequestUpdatesInner.php
 lib/Model/ContactsList200Response.php
 lib/Model/ContactsRemoveTag200Response.php
 lib/Model/Error.php
@@ -83,6 +100,12 @@ lib/Model/MeResponseData.php
 lib/Model/MeResponseDataLimits.php
 lib/Model/MeResponseDataRateLimit.php
 lib/Model/Message.php
+lib/Model/MessagesBulkSend200Response.php
+lib/Model/MessagesBulkSend200ResponseData.php
+lib/Model/MessagesBulkSend200ResponseDataResultsInner.php
+lib/Model/MessagesBulkSendRequest.php
+lib/Model/MessagesBulkSendRequestMessagesInner.php
+lib/Model/MessagesBulkSendRequestMessagesInnerAttachmentsInner.php
 lib/Model/MessagesList200Response.php
 lib/Model/MessagesSend200Response.php
 lib/Model/MessagesSend200ResponseData.php
@@ -115,6 +138,9 @@ test/Api/MessagesApiTest.php
 test/Api/ScenariosApiTest.php
 test/Api/SystemApiTest.php
 test/Api/WebhooksApiTest.php
+test/Model/BulkResultDataResultsInnerTest.php
+test/Model/BulkResultDataTest.php
+test/Model/BulkResultTest.php
 test/Model/ChannelTest.php
 test/Model/ChannelsList200ResponseMetaTest.php
 test/Model/ChannelsList200ResponseTest.php
@@ -125,6 +151,9 @@ test/Model/ContactWritableTest.php
 test/Model/ContactsAddTag200ResponseDataTest.php
 test/Model/ContactsAddTag200ResponseTest.php
 test/Model/ContactsAddTagRequestTest.php
+test/Model/ContactsBulkCreateRequestTest.php
+test/Model/ContactsBulkUpdateRequestTest.php
+test/Model/ContactsBulkUpdateRequestUpdatesInnerTest.php
 test/Model/ContactsList200ResponseTest.php
 test/Model/ContactsRemoveTag200ResponseTest.php
 test/Model/ErrorErrorTest.php
@@ -134,6 +163,12 @@ test/Model/MeResponseDataRateLimitTest.php
 test/Model/MeResponseDataTest.php
 test/Model/MeResponseTest.php
 test/Model/MessageTest.php
+test/Model/MessagesBulkSend200ResponseDataResultsInnerTest.php
+test/Model/MessagesBulkSend200ResponseDataTest.php
+test/Model/MessagesBulkSend200ResponseTest.php
+test/Model/MessagesBulkSendRequestMessagesInnerAttachmentsInnerTest.php
+test/Model/MessagesBulkSendRequestMessagesInnerTest.php
+test/Model/MessagesBulkSendRequestTest.php
 test/Model/MessagesList200ResponseTest.php
 test/Model/MessagesSend200ResponseDataTest.php
 test/Model/MessagesSend200ResponseTest.php
