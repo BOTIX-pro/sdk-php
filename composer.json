@@ -1,0 +1,56 @@
+{
+    "name": "botix-pro/sdk",
+    "description": "Официальный PHP SDK для публичного API BOTIX — платформы визуального конструктора чат-ботов и AI-ассистентов.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "botix",
+        "chatbot",
+        "telegram",
+        "vk",
+        "whatsapp",
+        "ai-assistant",
+        "rest-api",
+        "sdk"
+    ],
+    "homepage": "https://botix.pro/developers",
+    "support": {
+        "email": "hello@botix.pro",
+        "issues": "https://github.com/BOTIX-pro/sdk-php/issues",
+        "source": "https://github.com/BOTIX-pro/sdk-php",
+        "docs": "https://developers.botix.pro/"
+    },
+    "authors": [
+        {
+            "name": "BOTIX",
+            "email": "hello@botix.pro",
+            "homepage": "https://botix.pro"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "guzzlehttp/psr7": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5 || ^10.0 || ^11.0",
+        "friendsofphp/php-cs-fixer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "BotixPro\\Sdk\\": ["src/", "lib/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BotixPro\\Sdk\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs-fix": "php-cs-fixer fix"
+    }
+}
